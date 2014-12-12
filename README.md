@@ -15,7 +15,7 @@ Linux measures are collected through SSH, and can be collected from both Windows
 
 | Name | Top Process Monitoring Plugin
 | :--- | :---
-| Author | [Paul Kuit](Paul.Kuit@compuware.com)
+| Author | [Paul Kuit](mailto:Paul.Kuit@compuware.com)
 | Supported dynaTrace Versions | >= 5.5
 | License | [dynaTrace BSD](dynaTraceBSD.txt)
 | Support | [Not Supported](https://community.compuwareapm.com/community/display/DL/Support+Levels)
@@ -74,7 +74,7 @@ define topCPU=0 and vice versa.
 ### Installation
 
 Import the Plugin into the dynaTrace Server via the dynaTrace Server Settings menu -> Plugins -> Install Plugin. For details how to do this please refer to the [dynaTrace
-documentation](https://community.dynatrace.com/community/display/DOCDT32/Manage+and+Develop+Plugins#ManageandDevelopPlugins-ManageandDevelopPlugins).
+documentation](https://community.compuwareapm.com/community/display/DOCDT40/Plugin+Management).
 
 To use the provided dashboards please open the Dashboard and set the Data Source accordingly.
 
