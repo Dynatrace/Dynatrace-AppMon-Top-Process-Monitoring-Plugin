@@ -13,38 +13,18 @@ Linux measures are collected through SSH, and can be collected from both Windows
 
 ## Plugin Details
 
-Plug-In Files
-
-**dynaTrace 5.0+**: 
-
-[Top Monitor Plugin 1.0.2](attachments_137757091_1_br.com.compuware.topplugin_1.0.2.jar)  
-[Top Plugin Monitor Dashboard - Windows](attachments_121569464_1_Windows_Top_Processes_Dashboard.dashboard.xml)  
-[Top Plugin Monitor Dashboard - Linux](attachments_121569465_1_Linux_Top_Processes_Dashboard.dashboard.xml)
-
-Author
-
-[Paul Kuit](https://community/display/~Paul.Kuit@compuware.com)
-
-dynaTrace Versions
-
-4.2, 5.x
-
-License
-
-[dynaTrace BSD](attachments_5275722_2_dynaTraceBSD.txt)
-
-Support
-
-[Not Supported](https://community/display/DL/Support+Levels)
-
-Known Problems
-
-Release History
-
-2013-21-05 1.0.0 Initial Release  
-2013-22-05 1.0.1 Number Format fix
-
-2013-12-09 1.0.2 Gigabyte fix
+| Name | Top Process Monitoring Plugin
+| :--- | :---
+| Author | [Paul Kuit](Paul.Kuit@compuware.com)
+| Supported dynaTrace Versions | >= 5.5
+| License | [dynaTrace BSD](dynaTraceBSD.txt)
+| Support | [Not Supported](https://community.compuwareapm.com/community/display/DL/Support+Levels)
+| Release History | 2013-21-05 1.0.0 Initial Release  
+|| 2013-22-05 1.0.1 Number Format fix
+|| 2013-12-09 1.0.2 Gigabyte fix
+| Download | [Top Monitor Plugin 1.0.2](br.com.compuware.topplugin_1.0.2.jar)  
+|| [Top Plugin Monitor Dashboard - Windows](Top_Processes_Dashboard.dashboard.xml)  
+||[Top Plugin Monitor Dashboard - Linux](Linux_Top_Processes_Dashboard.dashboard.xml)
 
 ## Provided Measures
 
