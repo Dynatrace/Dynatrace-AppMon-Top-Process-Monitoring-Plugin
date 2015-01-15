@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!-- plugin.xml file written by dynaTrace Client 5.5.0 -->
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="br.com.compuware.topplugin" name="TopPlugin">
+    <information>
+      <category value="" />
+      <displayname value="Top Plugin" />
+      <description value="Plugin to retrieve remote CPU and Memory Metrics for top N processes running on Windows (powershell get-process) and Linux (SSH top)." />
+      <supportlevel value="unsupported" />
+    </information>
+    <configuration>
+      <property key="ssh-username" label="ssh-username" type="string" description="username to login to remote machine" default="ssh-username" multiline="false" />
+      <property key="ssh-password" label="ssh-password" type="password" description="password to login to remote machine" default="******" />
+      <property key="os" label="operatingSystem" type="list" description="Select the operating system" default="Windows">
+        <list>
+          <item value="Windows" />
+          <item value="Linux" />
+        </list>
+      </property>
+      <property key="topMemory" label="topMemory" type="long" description="Retrieves Top N processes consuming most Resident (Working Set) Memory." default="5" />
+      <property key="topCPU" label="topCPU" type="long" description="Retrieves Top N processes consuming most CPU Time." default="5" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitor" id="br.com.compuware.topplugin.monitor" name="Top Plugin Monitor">
+    <plugin configid="br.com.compuware.topplugin" class="br.com.compuware.topplugin.TopPluginMonitor" />
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="br.com.compuware.topplugin.monitor.generalavailablemetrics" name="Metrics available for both Windows and Linux">
+    <metricgroup monitorid="br.com.compuware.topplugin.monitor">
+      <metric defaultrate="purepath" name="VirtualMemory" unit="kilobytes" description="VM: The amount of virtual memory that the process is using, in kilobytes. Virtual memory includes storage in the paging files on disk. The amount of virtual memory committed for the process's sole use." />
+      <metric defaultrate="purepath" name="CPUTime" unit="s" description="CPU(s): The amount of processor time that the process has used on all processors, in seconds." />
+      <metric defaultrate="purepath" name="ResidentOrWorkingSetMemory" unit="kilobytes" description="Resident task size (Linux) or WorkingSet(windows): The size of the memory allocated by the process, in kilobytes. The working set consists of the pages of memory that were recently referenced by the process. The working set is the set of pages of physical memory that a process is using. Only data stored in physical memory (not currently paged to disk) is in the working set." />
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="br.com.compuware.topplugin.monitor.windowsspecificmetrics" name="Metrics available for Windows">
+    <metricgroup monitorid="br.com.compuware.topplugin.monitor">
+      <metric defaultrate="purepath" name="Handles" unit="occurrences" description="The number of handles that the process has opened. Number of smart pointers a process has opened to storage areas in memory.  When handles close, the memory is released." />
+      <metric defaultrate="purepath" name="NonPageableMemory" unit="kilobytes" description="The amount of non-paged memory that the process is using, in kilobytes. Non-paged pool is memory storage that is never paged to  the hard disk, so it's more quickly accessible." />
+      <metric defaultrate="purepath" name="PageableMemory" unit="kilobytes" description="The amount of pageable memory that the process is using, in kilobytes. Paged pool may be sent to disk if space is required. This makes paged pool effectively larger than non-paged pool (since the storage is limited only by the page file on disk). Some memory reads may take longer because the data requested is now stored on disk." />
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="br.com.compuware.topplugin.monitor.linuxspecificmetrics" name="Metrics available for Linux">
+    <metricgroup monitorid="br.com.compuware.topplugin.monitor">
+      <metric defaultrate="purepath" name="SharedMemory" unit="kilobytes" description="The amount of shared memory used by the task." />
+      <metric defaultrate="purepath" name="CPU" unit="percent" description="Percentage of CPU used." />
+      <metric defaultrate="purepath" name="Memory" unit="percent" description="Percentage of Memory used" />
+    </metricgroup>
+  </extension>
+</plugin>
+
