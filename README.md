@@ -7,4 +7,4 @@ Windows measures are collected through Powershell, so these measures must be exe
 
 Linux measures are collected through SSH, and can be collected from both Windows or Linux collectors.
 
-Find further information in the [dynatrace community](https://community.compuwareapm.com/community/display/DL/Top+Process+Monitoring+Plugin)
+Find further information in the [dynatrace community](https://community.dynatrace.com/community/display/DL/Top+Process+Monitoring+Plugin)
